@@ -18,15 +18,47 @@
       color: #fff;
       text-align: center;
       overflow-x: hidden;
+      position: relative;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@700&display=swap');
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.2rem;
+      user-select: none;
+      z-index: -1;
+      animation: float 10s ease-in-out infinite;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
     h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3.5rem;
       margin-bottom: 50px;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 10;
     }
 
     .line {
@@ -42,6 +74,8 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 10;
     }
 
     .line.visible {
@@ -60,6 +94,8 @@
       cursor: pointer;
       font-family: 'Playfair Display', serif;
       transition: all 0.3s;
+      position: relative;
+      z-index: 10;
     }
 
     .nav-btn:hover {
@@ -69,6 +105,9 @@
   </style>
 </head>
 <body>
+  <!-- Floating Hearts -->
+  <div id="hearts-container"></div>
+
   <h1>🌹 10 Reasons My Soul Chose You</h1>
 
   <div class="line">1. You don’t just love me — you understand the silence between my words.</div>
@@ -87,7 +126,7 @@
   <button class="nav-btn" onclick="window.location.href='boundaries.html'">Next: Our Sacred Boundaries 💞</button>
 
   <script>
-      // Create floating hearts
+    // Create floating hearts
     const container = document.getElementById('hearts-container');
     for (let i = 0; i < 25; i++) {
       const heart = document.createElement('div');
@@ -115,4 +154,3 @@
   </script>
 </body>
 </html>
-   
