@@ -100,6 +100,23 @@
   </div>
 
   <script>
+   // Create hearts
+    const container = document.getElementById('hearts-container');
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.animationDuration = (9 + Math.random() * 8) + 's';
+      container.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.opacity = 0.5;
+      }, Math.random() * 3000);
+    }
+
+    // Animate boundaries
     document.addEventListener('DOMContentLoaded', () => {
       const boundaries = document.querySelectorAll('.boundary');
       boundaries.forEach((b, index) => {
