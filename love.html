@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>10 Reasons I Love You</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 80px;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@700&display=swap');
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .line {
+      width: 80%;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(5px);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 1.4rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-btn {
+      margin-top: 50px;
+      padding: 15px 40px;
+      background: #ff6b9d;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(255,107,157,0.5);
+    }
+  </style>
+</head>
+<body>
+  <h1>🌹 10 Reasons My Soul Chose You</h1>
+
+  <div class="line">1. You don’t just love me — you understand the silence between my words.</div>
+  <div class="line">2. Your smile doesn’t just light up a room — it rewires my heartbeat.</div>
+  <div class="line">3. Even on my worst days, you make me feel like I’m still worthy of magic.</div>
+  <div class="line">4. You turn ordinary moments into memories I’ll replay for the rest of my life.</div>
+  <div class="line">5. You don’t fix me — you walk beside me while I heal, and that’s everything.</div>
+  <div class="line">6. The way you say my name — like it’s a secret only your lips were meant to speak.</div>
+  <div class="line">7. You give me space to breathe, yet your presence still feels like home.</div>
+  <div class="line">8. You see my storms — and instead of running, you dance in the rain with me.</div>
+  <div class="line">9. Loving you doesn’t feel like a choice — it feels like remembering something I’ve always known.</div>
+  <div class="line">10. With you, forever doesn’t scare me — it feels like the only place I belong.</div>
+  <div class="line">11. You’re not my “better half” — you’re the whole sky, and I’m just grateful to orbit you.</div>
+  <div class="line">12. I don’t want to grow old with you — I want to grow wild, free, and deeply alive… with you.</div>
+
+  <button class="nav-btn" onclick="window.location.href='boundaries.html'">Next: Our Sacred Boundaries 💞</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lines = document.querySelectorAll('.line');
+      lines.forEach((line, index) => {
+        setTimeout(() => {
+          line.classList.add('visible');
+        }, 500 + index * 300);
+      });
+    });
+  </script>
+</body>
+</html>
