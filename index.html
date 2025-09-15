@@ -15,9 +15,39 @@
       overflow: hidden;
       font-family: 'Dancing Script', cursive;
       cursor: pointer;
+      position: relative;
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255, 107, 157, 0.7);
+      font-size: 1.5rem;
+      user-select: none;
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
 
     .gate {
       position: relative;
@@ -35,6 +65,7 @@
       text-align: center;
       padding: 40px;
       transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 10;
     }
 
     .gate::before {
@@ -85,6 +116,7 @@
       color: white;
       font-size: 1.1rem;
       animation: pulse 2s infinite;
+      z-index: 20;
     }
 
     @keyframes pulse {
@@ -94,24 +126,7 @@
   </style>
 </head>
 <body>
-  <div class="gate" id="loveGate">
-    <h1>My Love, This Is For You</h1>
-    <p>A world of words, waiting behind this gate…<br>Click anywhere to enter.</p>
-    <div class="click-hint">💌 Click to Open My Heart</div>
-  </div>
-
-  <script>
-    const gate = document.getElementById('loveGate');
-    document.body.addEventListener('click', () => {
-      gate.classList.add('open');
-      setTimeout(() => {
-        window.location.href = 'love.html';
-      }, 1000);
-    });
-  </script>
-</body>
-</html>
-<!-- Floating Hearts -->
+  <!-- Floating Hearts -->
   <div id="hearts-container"></div>
 
   <div class="gate" id="loveGate">
