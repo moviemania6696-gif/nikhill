@@ -87,6 +87,23 @@
   <button class="nav-btn" onclick="window.location.href='boundaries.html'">Next: Our Sacred Boundaries 💞</button>
 
   <script>
+      // Create floating hearts
+    const container = document.getElementById('hearts-container');
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.animationDuration = (10 + Math.random() * 10) + 's';
+      container.appendChild(heart);
+
+      setTimeout(() => {
+        heart.style.opacity = 0.6;
+      }, Math.random() * 4000);
+    }
+
+    // Animate lines
     document.addEventListener('DOMContentLoaded', () => {
       const lines = document.querySelectorAll('.line');
       lines.forEach((line, index) => {
@@ -98,3 +115,4 @@
   </script>
 </body>
 </html>
+   
