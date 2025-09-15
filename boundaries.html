@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sacred Boundaries of Love</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      font-family: 'Playfair Display', serif;
+      color: #2c1810;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@700&display=swap');
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #5a2d82;
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.7);
+    }
+
+    .boundary {
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 40px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      font-size: 1.3rem;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .boundary.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .boundary::before {
+      content: "💞";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+    }
+
+    .final-message {
+      margin-top: 60px;
+      font-size: 1.6rem;
+      font-style: italic;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .ribbon {
+      width: 200px;
+      height: 40px;
+      background: #ff6b9d;
+      margin: 40px auto;
+      border-radius: 0 0 50% 50%;
+      position: relative;
+      animation: ribbonFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes ribbonFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ribbon"></div>
+  <h1>Sacred Boundaries of Love</h1>
+
+  <div class="boundary">I will never crowd your soul — I’ll leave space for your dreams to breathe, because love isn’t possession, it’s freedom held gently.</div>
+  <div class="boundary">I will honor your silence — not every emotion needs words, and not every wound needs fixing. Sometimes, presence is the greatest gift.</div>
+  <div class="boundary">I will protect your peace — even from me. If I become your storm, I will step back until I can be your shelter again.</div>
+  <div class="boundary">I will never ask you to shrink — your fire, your voice, your wildness… they are not too much. They are exactly why I chose you.</div>
+
+  <div class="final-message">
+    These aren’t walls, my love — they’re the sacred frame around our masterpiece.<br>
+    They’re how I promise to love you — not perfectly, but consciously.<br>
+    Not loudly, but deeply.<br>
+    Not for a moment — but for a lifetime.
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const boundaries = document.querySelectorAll('.boundary');
+      boundaries.forEach((b, index) => {
+        setTimeout(() => {
+          b.classList.add('visible');
+        }, 800 + index * 400);
+      });
+    });
+  </script>
+</body>
+</html>
