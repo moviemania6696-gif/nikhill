@@ -111,3 +111,40 @@
   </script>
 </body>
 </html>
+<!-- Floating Hearts -->
+  <div id="hearts-container"></div>
+
+  <div class="gate" id="loveGate">
+    <h1>My Love, This Is For You</h1>
+    <p>A world of words, waiting behind this gate…<br>Click anywhere to enter.</p>
+    <div class="click-hint">💌 Click to Open My Heart</div>
+  </div>
+
+  <script>
+    // Create 30 floating hearts
+    const container = document.getElementById('hearts-container');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.animationDuration = (8 + Math.random() * 8) + 's';
+      container.appendChild(heart);
+
+      // Fade in after random delay
+      setTimeout(() => {
+        heart.style.opacity = 0.8;
+      }, Math.random() * 3000);
+    }
+
+    const gate = document.getElementById('loveGate');
+    document.body.addEventListener('click', () => {
+      gate.classList.add('open');
+      setTimeout(() => {
+        window.location.href = 'love.html';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
