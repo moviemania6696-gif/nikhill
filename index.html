@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Gate of Eternal Love</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Dancing Script', cursive;
+      cursor: pointer;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+    .gate {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      max-width: 600px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .gate::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      width: 200px;
+      height: 30px;
+      background: #ff6b9d;
+      border-radius: 0 0 50% 50%;
+      box-shadow: 0 0 20px rgba(255,107,157,0.6);
+    }
+
+    .gate h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards 0.3s;
+    }
+
+    .gate p {
+      font-size: 1.3rem;
+      color: #fff;
+      max-width: 80%;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards 0.6s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gate.open {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 0;
+    }
+
+    .click-hint {
+      position: absolute;
+      bottom: 30px;
+      color: white;
+      font-size: 1.1rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gate" id="loveGate">
+    <h1>My Love, This Is For You</h1>
+    <p>A world of words, waiting behind this gate…<br>Click anywhere to enter.</p>
+    <div class="click-hint">💌 Click to Open My Heart</div>
+  </div>
+
+  <script>
+    const gate = document.getElementById('loveGate');
+    document.body.addEventListener('click', () => {
+      gate.classList.add('open');
+      setTimeout(() => {
+        window.location.href = 'love.html';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
